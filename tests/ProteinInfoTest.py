@@ -12,7 +12,10 @@ from src.ProteinInfo import ProteinInfo as pinfo
 class TestStringMethods(unittest.TestCase):
     def test_get_pid(self):
         vTestProtein = pinfo('12ASA       330  XRAY        2.200    0.16    0.29')
-        self.assertEqual('12ASA', vTestProtein.g_pid)
+        self.assertEqual('12AS', vTestProtein.g_pid)
+    def test_get_pid2(self):
+        vTestProtein = pinfo('12ASA       330  XRAY        2.200    0.16    0.29')
+        self.assertEqual('A', vTestProtein.g_chain)
     def test_get_length(self):
         vTestProtein = pinfo('12ASA       330  XRAY        2.200    0.16    0.29')
         self.assertEqual(330, vTestProtein.g_length)

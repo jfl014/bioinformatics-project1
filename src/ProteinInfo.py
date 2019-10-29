@@ -7,6 +7,7 @@ Created on Sun Oct 27 05:55:44 2019
 
 class ProteinInfo:
     g_pid = ''
+    g_chain = ''
     g_length = -1
     g_experimental = ''
     g_resolution = -1.0
@@ -17,7 +18,8 @@ class ProteinInfo:
         # body of the constructor
         toks = pInput.split()
         try:
-            self.g_pid = toks[0]
+            self.g_pid = toks[0][:-1]
+            self.g_chain = toks[0][-1:]
             self.g_length = int(toks[1])
             self.g_experimental = toks[2]
             self.g_resolution = float(toks[3])
